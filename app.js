@@ -201,7 +201,7 @@ const projects = [
     details: "重点在于 HBM 芯片供应链保障与本地数据中心运营，初步规划两座 20 MW 设施。",
     region: "亚洲",
     source: "AI Insider",
-    sourceUrl: ""
+    sourceUrl: "https://theaiinsider.tech/2025/10/01/openai-strikes-landmark-chip-and-data-center-deals-in-south-korea-to-power-stargate-project/"
   }
 ];
 
