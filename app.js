@@ -98,10 +98,10 @@ const projects = [
 ];
 
 const statusStyles = {
-  Online: { color: "#0f766e", badge: "badge-online", label: "Online" },
-  Building: { color: "#2563eb", badge: "badge-building", label: "Building" },
-  Groundbreaking: { color: "#d97706", badge: "badge-ground", label: "Groundbreaking" },
-  Planned: { color: "#7c3aed", badge: "badge-plan", label: "Planned" }
+  Online: { color: "#0f766e", badge: "badge-online", label: "部分上线" },
+  Building: { color: "#2563eb", badge: "badge-building", label: "建设中" },
+  Groundbreaking: { color: "#d97706", badge: "badge-ground", label: "已动工" },
+  Planned: { color: "#7c3aed", badge: "badge-plan", label: "规划中" }
 };
 
 let map;
@@ -127,15 +127,15 @@ function buildPopup(project) {
       <h3>${project.project}</h3>
       <div class="popup-company">${project.company}</div>
       <div class="popup-grid">
-        <strong>Location</strong><span>${project.location}</span>
-        <strong>Investment</strong><span>${project.investment}</span>
-        <strong>Capacity</strong><span>${project.capacity}</span>
-        <strong>Size</strong><span>${project.size}</span>
-        <strong>Status</strong><span>${style.label}</span>
-        <strong>Expected</strong><span>${project.expected}</span>
+        <strong>地点</strong><span>${project.location}</span>
+        <strong>投资额</strong><span>${project.investment}</span>
+        <strong>容量</strong><span>${project.capacity}</span>
+        <strong>面积</strong><span>${project.size}</span>
+        <strong>状态</strong><span>${style.label}</span>
+        <strong>预计时间</strong><span>${project.expected}</span>
       </div>
       <div class="popup-desc">${project.details}</div>
-      <div class="popup-source plain-source">Source: ${project.source}</div>
+      <div class="popup-source plain-source">来源: ${project.source}</div>
     </article>
   `;
 }
@@ -199,7 +199,7 @@ function updateMetrics(data) {
 function renderList(data) {
   const list = document.getElementById("project-list");
   if (!data.length) {
-    list.innerHTML = '<div class="empty-state">No matching projects.</div>';
+    list.innerHTML = '<div class="empty-state">没有匹配的项目。</div>';
     return;
   }
 

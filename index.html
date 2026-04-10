@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stargate AI Data Center Map</title>
+<title>美国星际之门数据中心地图</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <link rel="stylesheet" href="./style.css">
@@ -12,19 +12,19 @@
   <div class="page-shell">
     <header class="hero">
       <div class="hero-copy">
-        <h1>Stargate AI Data Center Map</h1>
+        <h1>美国星际之门数据中心地图</h1>
       </div>
       <div class="hero-panel">
         <div class="metric-card">
-          <span class="metric-label">Projects</span>
+          <span class="metric-label">项目数量</span>
           <strong id="metric-total">0</strong>
         </div>
         <div class="metric-card">
-          <span class="metric-label">Planned Capacity</span>
+          <span class="metric-label">总规划容量</span>
           <strong id="metric-capacity">0 MW</strong>
         </div>
         <div class="metric-card">
-          <span class="metric-label">States</span>
+          <span class="metric-label">覆盖州数</span>
           <strong id="metric-states">0</strong>
         </div>
       </div>
@@ -32,17 +32,17 @@
 
     <section class="toolbar">
       <label class="search-box">
-        <span>Search</span>
-        <input id="search-input" type="text" placeholder="Project / company / state">
+        <span>搜索</span>
+        <input id="search-input" type="text" placeholder="项目 / 公司 / 州名">
       </label>
       <label class="status-filter">
-        <span>Status</span>
+        <span>状态筛选</span>
         <select id="status-filter">
-          <option value="all">All statuses</option>
-          <option value="Online">Online</option>
-          <option value="Building">Building</option>
-          <option value="Groundbreaking">Groundbreaking</option>
-          <option value="Planned">Planned</option>
+          <option value="all">全部状态</option>
+          <option value="Online">部分上线</option>
+          <option value="Building">建设中</option>
+          <option value="Groundbreaking">已动工</option>
+          <option value="Planned">规划中</option>
         </select>
       </label>
     </section>
@@ -51,13 +51,13 @@
       <section class="map-card">
         <div class="card-head">
           <div>
-            <h2>Map Overview</h2>
+            <h2>地图总览</h2>
           </div>
           <div class="legend">
-            <span><i class="dot dot-online"></i>Online</span>
-            <span><i class="dot dot-building"></i>Building</span>
-            <span><i class="dot dot-ground"></i>Groundbreaking</span>
-            <span><i class="dot dot-plan"></i>Planned</span>
+            <span><i class="dot dot-online"></i>部分上线</span>
+            <span><i class="dot dot-building"></i>建设中</span>
+            <span><i class="dot dot-ground"></i>已动工</span>
+            <span><i class="dot dot-plan"></i>规划中</span>
           </div>
         </div>
         <div id="map"></div>
@@ -66,7 +66,7 @@
       <aside class="side-card">
         <div class="card-head">
           <div>
-            <h2>Project List</h2>
+            <h2>项目清单</h2>
           </div>
         </div>
         <div id="project-list" class="project-list"></div>
@@ -76,20 +76,20 @@
     <section class="table-card">
       <div class="card-head">
         <div>
-          <h2>Project Table</h2>
+          <h2>详细数据表</h2>
         </div>
       </div>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Project</th>
-              <th>Company</th>
-              <th>Location</th>
-              <th>Investment</th>
-              <th>Capacity</th>
-              <th>Status</th>
-              <th>Expected</th>
+              <th>项目</th>
+              <th>公司</th>
+              <th>地点</th>
+              <th>投资额</th>
+              <th>容量</th>
+              <th>状态</th>
+              <th>预计时间</th>
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
