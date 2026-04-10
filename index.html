@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stargate AI Data Center Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <h1>Stargate AI Data Center Map</h1>
+      </div>
+      <div class="hero-panel">
+        <div class="metric-card">
+          <span class="metric-label">Projects</span>
+          <strong id="metric-total">0</strong>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Planned Capacity</span>
+          <strong id="metric-capacity">0 MW</strong>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">States</span>
+          <strong id="metric-states">0</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <label class="search-box">
+        <span>Search</span>
+        <input id="search-input" type="text" placeholder="Project / company / state">
+      </label>
+      <label class="status-filter">
+        <span>Status</span>
+        <select id="status-filter">
+          <option value="all">All statuses</option>
+          <option value="Online">Online</option>
+          <option value="Building">Building</option>
+          <option value="Groundbreaking">Groundbreaking</option>
+          <option value="Planned">Planned</option>
+        </select>
+      </label>
+    </section>
+
+    <main class="content-grid">
+      <section class="map-card">
+        <div class="card-head">
+          <div>
+            <h2>Map Overview</h2>
+          </div>
+          <div class="legend">
+            <span><i class="dot dot-online"></i>Online</span>
+            <span><i class="dot dot-building"></i>Building</span>
+            <span><i class="dot dot-ground"></i>Groundbreaking</span>
+            <span><i class="dot dot-plan"></i>Planned</span>
+          </div>
+        </div>
+        <div id="map"></div>
+      </section>
+
+      <aside class="side-card">
+        <div class="card-head">
+          <div>
+            <h2>Project List</h2>
+          </div>
+        </div>
+        <div id="project-list" class="project-list"></div>
+      </aside>
+    </main>
+
+    <section class="table-card">
+      <div class="card-head">
+        <div>
+          <h2>Project Table</h2>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Company</th>
+              <th>Location</th>
+              <th>Investment</th>
+              <th>Capacity</th>
+              <th>Status</th>
+              <th>Expected</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
