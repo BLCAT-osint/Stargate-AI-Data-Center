@@ -397,7 +397,7 @@ function renderTable(data) {
   table.innerHTML = data.map(project => {
     const style = getStatusStyle(project.status);
     const sourceCell = project.sourceUrl
-      ? `<a href="${project.sourceUrl}" target="_blank" rel="noreferrer noopener">${project.source}</a>`
+      ? `<a href="${project.sourceUrl}" target="_blank" rel="noreferrer noopener">查看来源</a>`
       : project.source;
 
     return `

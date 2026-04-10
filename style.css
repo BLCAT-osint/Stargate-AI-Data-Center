@@ -336,6 +336,16 @@ tbody tr:hover {
   background: rgba(219, 234, 254, 0.35);
 }
 
+td a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+td a:hover {
+  color: #1e40af;
+}
+
 .empty-state {
   padding: 24px;
   color: var(--muted);
